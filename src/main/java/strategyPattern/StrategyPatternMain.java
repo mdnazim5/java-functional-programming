@@ -10,14 +10,14 @@ public class StrategyPatternMain {
     public static void main(String[] args) {
         final List<Integer> numbers = Lists.newArrayList(1,2,3,4,5,6,7,8,9);
 
-        final Integer sumAllValues = sumDoubleValues(numbers, doubleAllElementsSumStrategy);
-        System.out.println(sumAllValues);
+        final Integer doubleSumAllValues = sumDoubleValues(numbers, doubleAllElementsSumStrategy);
+        System.out.println(doubleSumAllValues);
 
-        final Integer sumEvenValues = sumDoubleValues(numbers, doubleEvenElementsSumStrategy);
-        System.out.println(sumEvenValues);
+        final Integer doubleSumEvenValues = sumDoubleValues(numbers, doubleEvenElementsSumStrategy);
+        System.out.println(doubleSumEvenValues);
 
-        final Integer sumOddValues = sumDoubleValues(numbers, doubleOddElementsSumStrategy);
-        System.out.println(sumOddValues);
+        final Integer doubleSumOddValues = sumDoubleValues(numbers, doubleOddElementsSumStrategy);
+        System.out.println(doubleSumOddValues);
     }
 
     public static Integer sumDoubleValues(final List<Integer> numbers, final Function<Integer, Integer> strategy) {
