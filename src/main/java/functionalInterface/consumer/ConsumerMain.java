@@ -3,14 +3,18 @@ package functionalInterface.consumer;
 public class ConsumerMain {
 
     public static void main(String[] args) {
-        _Consumer consumer = new _Consumer();
-        Customer maria = new Customer("Maria", "99999");
 
-        consumer.greetCustomer.accept(maria);
+        final String customerName = "Maria";
+        final String customerPhoneNumber = "+498987878798";
 
-        consumer.greetCustomerV2.accept(maria, true);
+        final _Consumer consumer = new _Consumer();
+        final Customer customer = new Customer(customerName, customerPhoneNumber);
 
-        consumer.greetCustomerV2.accept(maria, false);
+        consumer.greetCustomer.accept(customer);
+
+        consumer.greetCustomerV2.accept(customer, true);
+
+        consumer.greetCustomerV2.accept(customer, false);
     }
 
 }

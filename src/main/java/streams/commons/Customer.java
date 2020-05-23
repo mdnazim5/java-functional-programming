@@ -2,9 +2,9 @@ package streams.commons;
 
 public class Customer {
   private final String name;
-  private final int age;
+  private final Integer age;
   
-  public Customer(String theName, int theAge) {
+  public Customer(final String theName, final Integer theAge) {
     name = theName;
     age = theAge;
   }

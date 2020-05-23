@@ -7,11 +7,14 @@ import java.util.function.Supplier;
 
 public class _Supplier {
 
-    public Supplier<String> getDBConnectionUrl = () -> "jdbc://localhost:5432/users";
+    static final String JDBC_URL_USERS = "jdbc://localhost:5432/users";
+    static final String JDBC_URL_CUSTOMER = "jdbc://localhost:5432/customer";
 
-    public Supplier<List<String>> getDBConnectionUrls = ()
+    public final Supplier<String> getDBConnectionUrl = () -> JDBC_URL_USERS;
+
+    public final Supplier<List<String>> getDBConnectionUrls = ()
             -> Lists.newArrayList(
-            "jdbc://localhost:5432/users",
-            "jdbc://localhost:5432/customer");
+            JDBC_URL_USERS,
+            JDBC_URL_CUSTOMER);
 
 }
