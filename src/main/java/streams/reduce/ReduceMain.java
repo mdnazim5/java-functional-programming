@@ -1,15 +1,18 @@
 package streams.reduce;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import streams.commons.Customer;
 import streams.commons.CustomerUtil;
 
 public class ReduceMain {
+    private static final Logger LOG = LoggerFactory.getLogger(ReduceMain.class);
 
     public static void main(String[] args) {
-        System.out.println(
-                CustomerUtil.getCustomers().stream()
+        LOG.info(
+                String.valueOf(CustomerUtil.getCustomers().stream()
                         .mapToInt(Customer::getAge)
-                        .reduce(0, Integer::sum)
+                        .reduce(0, Integer::sum))
         );
     }
 }

@@ -1,23 +1,26 @@
 package strategyPattern;
 
 import com.google.common.collect.Lists;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.function.Function;
 
 public class StrategyPatternMain {
+    private static final Logger LOG = LoggerFactory.getLogger(StrategyPatternMain.class);
 
     public static void main(String[] args) {
         final List<Integer> numbers = Lists.newArrayList(1,2,3,4,5,6,7,8,9);
 
         final Integer doubleSumAllValues = sumDoubleValues(numbers, doubleAllElementsSumStrategy);
-        System.out.println(doubleSumAllValues);
+        LOG.info(String.valueOf(doubleSumAllValues));
 
         final Integer doubleSumEvenValues = sumDoubleValues(numbers, doubleEvenElementsSumStrategy);
-        System.out.println(doubleSumEvenValues);
+        LOG.info(String.valueOf(doubleSumEvenValues));
 
         final Integer doubleSumOddValues = sumDoubleValues(numbers, doubleOddElementsSumStrategy);
-        System.out.println(doubleSumOddValues);
+        LOG.info(String.valueOf(doubleSumOddValues));
     }
 
     public static Integer sumDoubleValues(final List<Integer> numbers, final Function<Integer, Integer> strategy) {
